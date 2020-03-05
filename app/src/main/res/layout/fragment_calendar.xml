@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewmodel"
+            type="com.yulmaso.k_notebook.ui.calendar.CalendarViewModel" />
+    </data>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="5dp"
+                android:orientation="vertical">
+
+                <com.applandeo.materialcalendarview.CalendarView
+                    android:id="@+id/calendar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    app:datePicker="true"
+                    app:eventsEnabled="true"
+                    app:headerColor="@color/backgroundColor"
+                    app:headerLabelColor="@android:color/background_dark"
+                    app:highlightedDaysLabelsColor="@color/colorAccent"
+                    app:selectionColor="@color/colorPrimaryDark"
+                    app:selectionLabelColor="@android:color/white"
+                    app:todayLabelColor="@color/colorAccent"
+                    app:type="one_day_picker" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/notesOnDateRV"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    tools:itemCount="5"
+                    tools:listitem="@layout/item_note" />
+
+
+                <!--TODO: add a tv saying nothing to show-->
+
+            </LinearLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+</layout>

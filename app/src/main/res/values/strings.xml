@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">k_notebook</string>
+
+    <string name="home">Home</string>
+    <string name="calendar">Calendar</string>
+    <string name="hashtags">Hashtags</string>
+</resources>

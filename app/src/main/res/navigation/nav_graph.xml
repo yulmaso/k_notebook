@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/home_dest">
+    <fragment
+        android:id="@+id/calendar_dest"
+        android:name="com.yulmaso.k_notebook.ui.calendar.CalendarFragment"
+        android:label="CalendarFragment">
+        <action
+            android:id="@+id/action_calendar_dest_to_noteFragment"
+            app:destination="@id/noteFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/home_dest"
+        android:name="com.yulmaso.k_notebook.ui.home.HomeFragment"
+        android:label="HomeFragment">
+        <action
+            android:id="@+id/action_home_dest_to_noteFragment"
+            app:destination="@id/noteFragment"
+            app:enterAnim="@anim/fragment_open_enter"
+            app:exitAnim="@anim/fragment_open_exit" />
+    </fragment>
+    <fragment
+        android:id="@+id/htags_dest"
+        android:name="com.yulmaso.k_notebook.ui.htags.HtagsFragment"
+        android:label="HtagsFragment">
+        <action
+            android:id="@+id/action_htags_dest_to_noteFragment2"
+            app:destination="@id/noteFragment"
+            app:enterAnim="@anim/fragment_open_enter"
+            app:exitAnim="@anim/fragment_open_exit" />
+    </fragment>
+    <fragment
+        android:id="@+id/noteFragment"
+        android:name="com.yulmaso.k_notebook.ui.note.NoteFragment"
+        android:label="NoteFragment">
+        <argument
+            android:name="id_note"
+            android:defaultValue="-1"
+            app:argType="integer" />
+    </fragment>
+</navigation>
